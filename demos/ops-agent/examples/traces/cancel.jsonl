@@ -1,0 +1,10 @@
+{"type":"run_start","scenario":"cancel","modelAdapter":"scripted-faux-not-a-real-llm","piAgentCore":"1.5.2","data":"simulated-local"}
+{"type":"message_end","role":"user","text":"查询 slow-probe，这个读取会被取消。"}
+{"type":"message_end","role":"assistant","stopReason":"toolUse","text":"get_service_health {\"serviceId\":\"slow-probe\"}"}
+{"type":"tool_execution_start","toolName":"get_service_health","args":{"serviceId":"slow-probe"}}
+{"type":"tool_attempt","tool":"get_service_health","attempt":1,"maxAttempts":3,"outcome":"cancelled","code":"cancelled"}
+{"type":"tool_execution_end","toolName":"get_service_health","isError":true,"text":"cancelled 已取消"}
+{"type":"message_end","role":"toolResult","isError":true,"toolName":"get_service_health","text":"cancelled 已取消"}
+{"type":"turn","index":1,"stopReason":"toolUse"}
+{"type":"message_end","role":"assistant","stopReason":"aborted","text":""}
+{"type":"stop","reason":"aborted"}

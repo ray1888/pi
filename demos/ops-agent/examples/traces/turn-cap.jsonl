@@ -1,0 +1,21 @@
+{"type":"run_start","scenario":"turn-cap","modelAdapter":"scripted-faux-not-a-real-llm","piAgentCore":"1.5.2","data":"simulated-local"}
+{"type":"message_end","role":"user","text":"不停地列出服务。演示应该在轮次上限处停下。"}
+{"type":"message_end","role":"assistant","stopReason":"toolUse","text":"list_services {}"}
+{"type":"tool_execution_start","toolName":"list_services","args":{}}
+{"type":"tool_attempt","tool":"list_services","attempt":1,"maxAttempts":3,"outcome":"ok","code":"ok"}
+{"type":"tool_execution_end","toolName":"list_services","isError":false,"text":"{\"source\":\"simulated-local\",\"services\":[{\"serviceId\":\"checkout-api\",\"status\":\"healthy\"},{\"serviceId\":\"payments\",\"status\":\"degraded\"},{\"serviceId\":\"inventory\",\"status\":\"healthy\"},{\"serviceId\":\"ledger\",\"status\":\"healthy\"},{\"serviceId\":\"slow-probe\",\"status\":\"healthy\"},{\"serviceId\":\"slow-then-fast\",\"status\":\"healthy\"}]}"}
+{"type":"message_end","role":"toolResult","isError":false,"toolName":"list_services","text":"{\"source\":\"simulated-local\",\"services\":[{\"serviceId\":\"checkout-api\",\"status\":\"healthy\"},{\"serviceId\":\"payments\",\"status\":\"degraded\"},{\"serviceId\":\"inventory\",\"status\":\"healthy\"},{\"serviceId\":\"ledger\",\"status\":\"healthy\"},{\"serviceId\":\"slow-probe\",\"status\":\"healthy\"},{\"serviceId\":\"slow-then-fast\",\"status\":\"healthy\"}]}"}
+{"type":"turn","index":1,"stopReason":"toolUse"}
+{"type":"message_end","role":"assistant","stopReason":"toolUse","text":"list_services {}"}
+{"type":"tool_execution_start","toolName":"list_services","args":{}}
+{"type":"tool_attempt","tool":"list_services","attempt":1,"maxAttempts":3,"outcome":"ok","code":"ok"}
+{"type":"tool_execution_end","toolName":"list_services","isError":false,"text":"{\"source\":\"simulated-local\",\"services\":[{\"serviceId\":\"checkout-api\",\"status\":\"healthy\"},{\"serviceId\":\"payments\",\"status\":\"degraded\"},{\"serviceId\":\"inventory\",\"status\":\"healthy\"},{\"serviceId\":\"ledger\",\"status\":\"healthy\"},{\"serviceId\":\"slow-probe\",\"status\":\"healthy\"},{\"serviceId\":\"slow-then-fast\",\"status\":\"healthy\"}]}"}
+{"type":"message_end","role":"toolResult","isError":false,"toolName":"list_services","text":"{\"source\":\"simulated-local\",\"services\":[{\"serviceId\":\"checkout-api\",\"status\":\"healthy\"},{\"serviceId\":\"payments\",\"status\":\"degraded\"},{\"serviceId\":\"inventory\",\"status\":\"healthy\"},{\"serviceId\":\"ledger\",\"status\":\"healthy\"},{\"serviceId\":\"slow-probe\",\"status\":\"healthy\"},{\"serviceId\":\"slow-then-fast\",\"status\":\"healthy\"}]}"}
+{"type":"turn","index":2,"stopReason":"toolUse"}
+{"type":"message_end","role":"assistant","stopReason":"toolUse","text":"list_services {}"}
+{"type":"tool_execution_start","toolName":"list_services","args":{}}
+{"type":"tool_attempt","tool":"list_services","attempt":1,"maxAttempts":3,"outcome":"ok","code":"ok"}
+{"type":"tool_execution_end","toolName":"list_services","isError":false,"text":"{\"source\":\"simulated-local\",\"services\":[{\"serviceId\":\"checkout-api\",\"status\":\"healthy\"},{\"serviceId\":\"payments\",\"status\":\"degraded\"},{\"serviceId\":\"inventory\",\"status\":\"healthy\"},{\"serviceId\":\"ledger\",\"status\":\"healthy\"},{\"serviceId\":\"slow-probe\",\"status\":\"healthy\"},{\"serviceId\":\"slow-then-fast\",\"status\":\"healthy\"}]}"}
+{"type":"message_end","role":"toolResult","isError":false,"toolName":"list_services","text":"{\"source\":\"simulated-local\",\"services\":[{\"serviceId\":\"checkout-api\",\"status\":\"healthy\"},{\"serviceId\":\"payments\",\"status\":\"degraded\"},{\"serviceId\":\"inventory\",\"status\":\"healthy\"},{\"serviceId\":\"ledger\",\"status\":\"healthy\"},{\"serviceId\":\"slow-probe\",\"status\":\"healthy\"},{\"serviceId\":\"slow-then-fast\",\"status\":\"healthy\"}]}"}
+{"type":"turn","index":3,"stopReason":"toolUse"}
+{"type":"stop","reason":"max_turns"}
