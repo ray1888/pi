@@ -1,0 +1,13 @@
+{"type":"run_start","scenario":"transient-tool","modelAdapter":"scripted-faux-not-a-real-llm","piAgentCore":"1.5.2","data":"simulated-local"}
+{"type":"message_end","role":"user","text":"看一下 inventory。如果是暂时的上游错误，由工具重试，不要换服务。"}
+{"type":"message_end","role":"assistant","stopReason":"toolUse","text":"get_service_health {\"serviceId\":\"inventory\"}"}
+{"type":"tool_execution_start","toolName":"get_service_health","args":{"serviceId":"inventory"}}
+{"type":"tool_attempt","tool":"get_service_health","attempt":1,"maxAttempts":3,"outcome":"retryable","code":"simulated_upstream_503","nextDelayMs":1}
+{"type":"tool_attempt","tool":"get_service_health","attempt":2,"maxAttempts":3,"outcome":"retryable","code":"simulated_upstream_503","nextDelayMs":2}
+{"type":"tool_attempt","tool":"get_service_health","attempt":3,"maxAttempts":3,"outcome":"ok","code":"ok"}
+{"type":"tool_execution_end","toolName":"get_service_health","isError":false,"text":"{\"source\":\"simulated-local\",\"serviceId\":\"inventory\",\"status\":\"healthy\",\"httpStatus\":200,\"latencyMs\":40,\"note\":\"模拟：前两次上游返回 503，之后恢复\"}"}
+{"type":"message_end","role":"toolResult","isError":false,"toolName":"get_service_health","text":"{\"source\":\"simulated-local\",\"serviceId\":\"inventory\",\"status\":\"healthy\",\"httpStatus\":200,\"latencyMs\":40,\"note\":\"模拟：前两次上游返回 503，之后恢复\"}"}
+{"type":"turn","index":1,"stopReason":"toolUse"}
+{"type":"message_end","role":"assistant","stopReason":"stop","text":"已读到模拟健康数据，source=simulated-local。停止。"}
+{"type":"turn","index":2,"stopReason":"stop"}
+{"type":"stop","reason":"completed"}
