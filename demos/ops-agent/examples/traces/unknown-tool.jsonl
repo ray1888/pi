@@ -1,0 +1,10 @@
+{"type":"run_start","scenario":"unknown-tool","modelAdapter":"scripted-faux-not-a-real-llm","piAgentCore":"1.5.2","data":"simulated-local"}
+{"type":"message_end","role":"user","text":"不要用 shell。"}
+{"type":"message_end","role":"assistant","stopReason":"toolUse","text":"bash {\"command\":\"kubectl get pods\"}"}
+{"type":"tool_execution_start","toolName":"bash","args":{"command":"kubectl get pods"}}
+{"type":"tool_execution_end","toolName":"bash","isError":true,"text":"Tool bash not found"}
+{"type":"message_end","role":"toolResult","isError":true,"toolName":"bash","text":"Tool bash not found"}
+{"type":"turn","index":1,"stopReason":"toolUse"}
+{"type":"message_end","role":"assistant","stopReason":"stop","text":"bash 不在白名单里，停止。没有执行 shell。"}
+{"type":"turn","index":2,"stopReason":"stop"}
+{"type":"stop","reason":"completed"}

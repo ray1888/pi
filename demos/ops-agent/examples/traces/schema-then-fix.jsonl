@@ -1,0 +1,16 @@
+{"type":"run_start","scenario":"schema-then-fix","modelAdapter":"scripted-faux-not-a-real-llm","piAgentCore":"1.5.2","data":"simulated-local"}
+{"type":"message_end","role":"user","text":"查健康，但你第一次可能会漏掉 serviceId。"}
+{"type":"message_end","role":"assistant","stopReason":"toolUse","text":"get_service_health {}"}
+{"type":"tool_execution_start","toolName":"get_service_health","args":{}}
+{"type":"tool_execution_end","toolName":"get_service_health","isError":true,"text":"Validation failed for tool \"get_service_health\":\n  - serviceId: missing\n\nReceived arguments:\n{}"}
+{"type":"message_end","role":"toolResult","isError":true,"toolName":"get_service_health","text":"Validation failed for tool \"get_service_health\":\n  - serviceId: missing\n\nReceived arguments:\n{}"}
+{"type":"turn","index":1,"stopReason":"toolUse"}
+{"type":"message_end","role":"assistant","stopReason":"toolUse","text":"get_service_health {\"serviceId\":\"checkout-api\"}"}
+{"type":"tool_execution_start","toolName":"get_service_health","args":{"serviceId":"checkout-api"}}
+{"type":"tool_attempt","tool":"get_service_health","attempt":1,"maxAttempts":3,"outcome":"ok","code":"ok"}
+{"type":"tool_execution_end","toolName":"get_service_health","isError":false,"text":"{\"source\":\"simulated-local\",\"serviceId\":\"checkout-api\",\"status\":\"healthy\",\"httpStatus\":200,\"latencyMs\":12,\"note\":\"模拟：错误率在阈值内\"}"}
+{"type":"message_end","role":"toolResult","isError":false,"toolName":"get_service_health","text":"{\"source\":\"simulated-local\",\"serviceId\":\"checkout-api\",\"status\":\"healthy\",\"httpStatus\":200,\"latencyMs\":12,\"note\":\"模拟：错误率在阈值内\"}"}
+{"type":"turn","index":2,"stopReason":"toolUse"}
+{"type":"message_end","role":"assistant","stopReason":"stop","text":"已读到模拟健康数据，source=simulated-local。停止。"}
+{"type":"turn","index":3,"stopReason":"stop"}
+{"type":"stop","reason":"completed"}

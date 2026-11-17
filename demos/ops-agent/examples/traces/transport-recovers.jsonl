@@ -1,0 +1,12 @@
+{"type":"run_start","scenario":"transport-recovers","modelAdapter":"scripted-faux-not-a-real-llm","piAgentCore":"1.5.2","data":"simulated-local"}
+{"type":"message_end","role":"user","text":"传输抖了一下之后，再看 checkout-api。"}
+{"type":"transport_retry","attempt":1,"maxAttempts":2,"delayMs":1,"errorMessage":"503 service unavailable"}
+{"type":"message_end","role":"assistant","stopReason":"toolUse","text":"get_service_health {\"serviceId\":\"checkout-api\"}"}
+{"type":"tool_execution_start","toolName":"get_service_health","args":{"serviceId":"checkout-api"}}
+{"type":"tool_attempt","tool":"get_service_health","attempt":1,"maxAttempts":3,"outcome":"ok","code":"ok"}
+{"type":"tool_execution_end","toolName":"get_service_health","isError":false,"text":"{\"source\":\"simulated-local\",\"serviceId\":\"checkout-api\",\"status\":\"healthy\",\"httpStatus\":200,\"latencyMs\":12,\"note\":\"模拟：错误率在阈值内\"}"}
+{"type":"message_end","role":"toolResult","isError":false,"toolName":"get_service_health","text":"{\"source\":\"simulated-local\",\"serviceId\":\"checkout-api\",\"status\":\"healthy\",\"httpStatus\":200,\"latencyMs\":12,\"note\":\"模拟：错误率在阈值内\"}"}
+{"type":"turn","index":1,"stopReason":"toolUse"}
+{"type":"message_end","role":"assistant","stopReason":"stop","text":"传输恢复后读到模拟数据。停止。"}
+{"type":"turn","index":2,"stopReason":"stop"}
+{"type":"stop","reason":"completed"}

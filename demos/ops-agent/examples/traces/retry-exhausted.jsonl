@@ -1,0 +1,13 @@
+{"type":"run_start","scenario":"retry-exhausted","modelAdapter":"scripted-faux-not-a-real-llm","piAgentCore":"1.5.2","data":"simulated-local"}
+{"type":"message_end","role":"user","text":"查询 ledger。暂时失败可以重试，但必须有上限。"}
+{"type":"message_end","role":"assistant","stopReason":"toolUse","text":"get_service_health {\"serviceId\":\"ledger\"}"}
+{"type":"tool_execution_start","toolName":"get_service_health","args":{"serviceId":"ledger"}}
+{"type":"tool_attempt","tool":"get_service_health","attempt":1,"maxAttempts":3,"outcome":"retryable","code":"simulated_upstream_503","nextDelayMs":1}
+{"type":"tool_attempt","tool":"get_service_health","attempt":2,"maxAttempts":3,"outcome":"retryable","code":"simulated_upstream_503","nextDelayMs":2}
+{"type":"tool_attempt","tool":"get_service_health","attempt":3,"maxAttempts":3,"outcome":"retryable","code":"simulated_upstream_503"}
+{"type":"tool_execution_end","toolName":"get_service_health","isError":true,"text":"retry_exhausted code=simulated_upstream_503 attempts=3"}
+{"type":"message_end","role":"toolResult","isError":true,"toolName":"get_service_health","text":"retry_exhausted code=simulated_upstream_503 attempts=3"}
+{"type":"turn","index":1,"stopReason":"toolUse"}
+{"type":"message_end","role":"assistant","stopReason":"stop","text":"停止。retry_exhausted code=simulated_upstream_503 attempts=3"}
+{"type":"turn","index":2,"stopReason":"stop"}
+{"type":"stop","reason":"completed"}
