@@ -1,0 +1,4 @@
+{"type":"run_start","scenario":"transport-not-retryable","modelAdapter":"scripted-faux-not-a-real-llm","piAgentCore":"1.5.2","data":"simulated-local"}
+{"type":"message_end","role":"user","text":"这次不该重试传输。"}
+{"type":"message_end","role":"assistant","stopReason":"error","text":""}
+{"type":"stop","reason":"provider_error"}

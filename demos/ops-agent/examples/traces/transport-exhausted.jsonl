@@ -1,0 +1,6 @@
+{"type":"run_start","scenario":"transport-exhausted","modelAdapter":"scripted-faux-not-a-real-llm","piAgentCore":"1.5.2","data":"simulated-local"}
+{"type":"message_end","role":"user","text":"传输一直 503。"}
+{"type":"transport_retry","attempt":1,"maxAttempts":2,"delayMs":1,"errorMessage":"503 service unavailable"}
+{"type":"transport_retry","attempt":2,"maxAttempts":2,"delayMs":2,"errorMessage":"503 service unavailable"}
+{"type":"message_end","role":"assistant","stopReason":"error","text":""}
+{"type":"stop","reason":"provider_error"}
